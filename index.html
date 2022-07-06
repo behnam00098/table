@@ -1,0 +1,1024 @@
+<style>
+    .container {
+  max-width: 500px;
+  margin: 0px auto 0px auto;
+  /* Firefox */
+}
+.container input::-webkit-outer-spin-button,
+.container input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+.container input[type=number] {
+  -moz-appearance: textfield;
+}
+.container .warning-box {
+  width: 85%;
+  display: none;
+  margin: 0px auto 0px auto;
+  background-color: #f8d7da;
+  color: #721c24;
+  border: 1px solid #f5c6cb;
+  border-radius: 8px;
+  padding: 10px;
+  text-align: right;
+}
+.container .main-container {
+  direction: rtl;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 0px;
+  overflow: hidden;
+  /*name start*/
+  /*name end*/
+  /*score start*/
+  /*score end*/
+}
+.container .main-container .names {
+  margin-left: 50px;
+}
+.container .main-container .names ul {
+  width: 50px;
+  border: 2px solid black;
+  border-radius: 8px;
+  padding: 0px;
+  margin: 0px !important;
+  overflow: hidden;
+}
+.container .main-container .names ul li {
+  list-style: none;
+  border: 1px solid black;
+  border-right: none;
+  border-left: none;
+  border-bottom: none;
+  text-align: center;
+}
+.container .main-container .names ul li input {
+  max-width: 100%;
+  border: none;
+  outline: none;
+  text-align: center;
+}
+.container .main-container .results-col-box {
+  direction: ltr;
+  width: 100px;
+  background: white;
+  border: 2px solid black;
+  border-radius: 8px;
+  padding: 0px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+.container .main-container .results-col-box .col-number {
+  display: block;
+  text-align: center;
+}
+.container .main-container .results-col-box .box-col {
+  display: flex;
+  max-width: 100px !important;
+}
+.container .main-container .results-col-box .box-col ul {
+  width: 50%;
+  display: inline-block;
+  padding: 0%;
+  margin: 0%;
+}
+.container .main-container .results-col-box .box-col ul li {
+  max-width: 100%;
+  list-style: none;
+  text-align: center;
+  border: 1px solid black;
+  padding: 2px;
+}
+.container .main-container .score-container {
+  direction: ltr;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.container .main-container .score-container .scroll-box {
+  display: flex;
+}
+.container .main-container .score-container .score-col-box {
+  width: 30px;
+  background: white;
+  opacity: 0.5;
+  border: 2px solid black;
+  border-radius: 8px;
+  padding: 0px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  transition: ease all 0.3s;
+}
+.container .main-container .score-container .score-col-box .col-number {
+  display: block;
+  text-align: center;
+}
+.container .main-container .score-container .score-col-box .box-col {
+  display: flex;
+  max-width: 70px !important;
+}
+.container .main-container .score-container .score-col-box .box-col ul {
+  display: inline-block;
+  padding: 0%;
+  margin: 0%;
+}
+.container .main-container .score-container .score-col-box .box-col ul li {
+  max-width: 100%;
+  list-style: none;
+  text-align: center;
+}
+.container .main-container .score-container .score-col-box .box-col ul li input {
+  max-width: 100%;
+  border: none !important;
+  outline: none !important;
+  text-align: center !important;
+  overflow: hidden;
+  padding: 0px;
+}
+.container .main-container .score-container .score-col-box .box-col .guss-col {
+  width: 30px;
+}
+.container .main-container .score-container .score-col-box .box-col .guss-col li {
+  border: 1px solid black;
+}
+.container .main-container .score-container .score-col-box .box-col .score-col {
+  width: 50px;
+}
+.container .main-container .score-container .score-col-box .box-col .score-col li {
+  border: 1px solid black;
+}
+.container .main-container .box-active {
+  width: 80px !important;
+  opacity: 1 !important;
+  position: relative;
+  transform: scale(1.1);
+  z-index: 22;
+}
+.container .btn-box {
+  display: flex;
+  flex-direction: row-reverse;
+  align-items: center;
+  position: relative;
+  top: 20px;
+}
+.container .btn-box .sum-btn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.container .btn-box .sum-btn span {
+  cursor: pointer;
+}
+.container .btn-box .btn-back {
+  cursor: pointer;
+}
+.container .btn-box .try-again {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.container .btn-box .try-again span {
+  color: white;
+  background-color: #000000;
+  padding: 5px 10px;
+  border-radius: 4px;
+  font-size: 16px;
+  cursor: pointer;
+}
+.container .scroll-btn span {
+  cursor: pointer;
+}
+.warning-active {
+  display: block !important;
+}
+
+.active-big-box {
+  height: auto !important;
+  transition: all ease 1s;
+  padding-bottom: 35px;
+}
+
+@media only screen and (max-width: 600px) {
+  .score-container {
+    max-width: 88px !important;
+    overflow: hidden;
+    padding: 30px;
+    display: flex;
+    justify-content: flex-start !important;
+  }
+  .score-container .scroll-box {
+    transform: translateX(0px);
+    transition: ease all 0.5s;
+  }
+}
+@media only screen and (min-width: 601px) {
+  .container .scroll-btn {
+    display: none;
+  }
+}/*# sourceMappingURL=style.css.map */
+</style>
+
+<div class="container" >
+     
+    <!--main container start-->
+    <div class="main-container scores-big-box active-big-box" >
+           <!--names start-->
+           <div style="display: flex; flex-direction:column;justify-content: center;align-items: center;margin-left: 50px; position:relative;top: 15px;">
+            <div class="names" style="margin:0px !important  ;">
+                <ul>
+                    <li style="border:none !important ;">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-person-fill" viewBox="0 0 16 16">
+                            <path d="M3 14s-1 0-1-1 1-4 6-4 6 3 6 4-1 1-1 1H3zm5-6a3 3 0 1 0 0-6 3 3 0 0 0 0 6z"/>
+                          </svg>
+                    </li>
+                    <li>
+                        <input type="text" placeholder="">
+                    </li>
+                    <li>
+                        <input type="text">
+                    </li> 
+                    <li>
+                        <input type="text">
+                    </li>
+                     <li>
+                        <input type="text">
+                    </li> 
+                    <li>
+                        <input type="text">
+                    </li> 
+                    <li>
+                        <input type="text">
+                    </li>
+                    
+                </ul>
+               </div>
+                <!--btn start-->
+    <div class="btn-box">
+        <div class="sum-btn">
+            <span class="btn-plus">
+                <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor" class="bi bi-plus-square-fill" viewBox="0 0 16 16">
+                    <path d="M2 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2H2zm6.5 4.5v3h3a.5.5 0 0 1 0 1h-3v3a.5.5 0 0 1-1 0v-3h-3a.5.5 0 0 1 0-1h3v-3a.5.5 0 0 1 1 0z"/>
+                  </svg>
+            </span>
+        </div>
+    </div>
+    <!--btn end-->
+            </div>
+           <!--names end-->
+             <!--next and perv btn start-->
+    <div class="scroll-btn">
+        <span class="next-btn" onclick="nextBtn()">
+            <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor" class="bi bi-caret-right-fill" viewBox="0 0 16 16">
+                <path d="m12.14 8.753-5.482 4.796c-.646.566-1.658.106-1.658-.753V3.204a1 1 0 0 1 1.659-.753l5.48 4.796a1 1 0 0 1 0 1.506z"/>
+              </svg>
+        </span>
+    </div>
+    <!--next and perv btn end-->
+        
+    <!--score start-->
+    <div class="score-container">
+        <div class="scroll-box">
+         <!--column start-->
+        <div class="score-col-box box-active" id="first-col">
+            <span class="col-number">1</span>
+            <div class="box-col">
+                  <ul class="guss-col">
+                <li>
+                    <input type="number">
+                </li>
+                <li>
+                    <input type="number">
+                </li> 
+                <li>
+                    <input type="number">
+                </li>
+                 <li>
+                    <input type="number">
+                </li> 
+                <li>
+                    <input type="number">
+                </li> 
+                <li>
+                    <input type="number">
+                </li>
+                 
+            </ul>
+            <ul class="score-col">
+                <li>
+                    <input type="number" class="row1">
+                </li>
+                <li>
+                    <input type="number" class="row2">
+                </li> 
+                <li>
+                    <input type="number" class="row3">
+                </li>
+                 <li>
+                    <input type="number" class="row4">
+                </li> 
+                <li>
+                    <input type="number" class="row5">
+                </li> 
+                <li>
+                    <input type="number" class="row6">
+                </li>
+                
+            </ul>
+            </div>
+          
+        </div>
+        <!--column end-->
+          <!--column start-->
+          <div class="score-col-box">
+            <span class="col-number">2</span>
+            <div class="box-col">
+                  <ul class="guss-col">
+                <li>
+                    <input type="number">
+                </li>
+                <li>
+                    <input type="number">
+                </li> 
+                <li>
+                    <input type="number">
+                </li>
+                 <li>
+                    <input type="number">
+                </li> 
+                <li>
+                    <input type="number">
+                </li> 
+                <li>
+                    <input type="number">
+                </li>
+                 
+            </ul>
+            <ul class="score-col">
+                <li>
+                    <input type="number" class="row1">
+                </li>
+                <li>
+                    <input type="number" class="row2">
+                </li> 
+                <li>
+                    <input type="number" class="row3">
+                </li>
+                 <li>
+                    <input type="number" class="row4">
+                </li> 
+                <li>
+                    <input type="number" class="row5">
+                </li> 
+                <li>
+                    <input type="number" class="row6">
+                </li>
+                
+            </ul>
+            </div>
+          
+        </div>
+        <!--column end-->
+          <!--column start-->
+          <div class="score-col-box">
+            <span class="col-number">3</span>
+            <div class="box-col">
+                  <ul class="guss-col">
+                <li>
+                    <input type="number">
+                </li>
+                <li>
+                    <input type="number">
+                </li> 
+                <li>
+                    <input type="number">
+                </li>
+                 <li>
+                    <input type="number">
+                </li> 
+                <li>
+                    <input type="number">
+                </li> 
+                <li>
+                    <input type="number">
+                </li>
+                 
+            </ul>
+            <ul class="score-col">
+                <li>
+                    <input type="number" class="row1">
+                </li>
+                <li>
+                    <input type="number" class="row2">
+                </li> 
+                <li>
+                    <input type="number" class="row3">
+                </li>
+                 <li>
+                    <input type="number" class="row4">
+                </li> 
+                <li>
+                    <input type="number" class="row5">
+                </li> 
+                <li>
+                    <input type="number" class="row6">
+                </li>
+                
+            </ul>
+            </div>
+          
+        </div>
+        <!--column end-->
+          <!--column start-->
+          <div class="score-col-box">
+            <span class="col-number">4</span>
+            <div class="box-col">
+                  <ul class="guss-col">
+                <li>
+                    <input type="number">
+                </li>
+                <li>
+                    <input type="number">
+                </li> 
+                <li>
+                    <input type="number">
+                </li>
+                 <li>
+                    <input type="number">
+                </li> 
+                <li>
+                    <input type="number">
+                </li> 
+                <li>
+                    <input type="number">
+                </li>
+                 
+            </ul>
+            <ul class="score-col">
+                <li>
+                    <input type="number" class="row1">
+                </li>
+                <li>
+                    <input type="number" class="row2">
+                </li> 
+                <li>
+                    <input type="number" class="row3">
+                </li>
+                 <li>
+                    <input type="number" class="row4">
+                </li> 
+                <li>
+                    <input type="number" class="row5">
+                </li> 
+                <li>
+                    <input type="number" class="row6">
+                </li>
+                
+            </ul>
+            </div>
+          
+        </div>
+        <!--column end-->
+          <!--column start-->
+          <div class="score-col-box">
+            <span class="col-number">5</span>
+            <div class="box-col">
+                  <ul class="guss-col">
+                <li>
+                    <input type="number">
+                </li>
+                <li>
+                    <input type="number">
+                </li> 
+                <li>
+                    <input type="number">
+                </li>
+                 <li>
+                    <input type="number">
+                </li> 
+                <li>
+                    <input type="number">
+                </li> 
+                <li>
+                    <input type="number">
+                </li>
+                 
+            </ul>
+            <ul class="score-col">
+                <li>
+                    <input type="number" class="row1">
+                </li>
+                <li>
+                    <input type="number" class="row2">
+                </li> 
+                <li>
+                    <input type="number" class="row3">
+                </li>
+                 <li>
+                    <input type="number" class="row4">
+                </li> 
+                <li>
+                    <input type="number" class="row5">
+                </li> 
+                <li>
+                    <input type="number" class="row6">
+                </li>
+                
+            </ul>
+            </div>
+          
+        </div>
+        <!--column end-->  <!--column start-->
+          <div class="score-col-box">
+            <span class="col-number">6</span>
+            <div class="box-col">
+                  <ul class="guss-col">
+                <li>
+                    <input type="number">
+                </li>
+                <li>
+                    <input type="number">
+                </li> 
+                <li>
+                    <input type="number">
+                </li>
+                 <li>
+                    <input type="number">
+                </li> 
+                <li>
+                    <input type="number">
+                </li> 
+                <li>
+                    <input type="number">
+                </li>
+                 
+            </ul>
+            <ul class="score-col">
+                <li>
+                    <input type="number" class="row1">
+                </li>
+                <li>
+                    <input type="number" class="row2">
+                </li> 
+                <li>
+                    <input type="number" class="row3">
+                </li>
+                 <li>
+                    <input type="number" class="row4">
+                </li> 
+                <li>
+                    <input type="number" class="row5">
+                </li> 
+                <li>
+                    <input type="number" class="row6">
+                </li>
+                
+            </ul>
+            </div>
+          
+        </div>
+        <!--column end--> 
+         <!--column start-->
+          <div class="score-col-box">
+            <span class="col-number">7</span>
+            <div class="box-col">
+                  <ul class="guss-col">
+                <li>
+                    <input type="number">
+                </li>
+                <li>
+                    <input type="number">
+                </li> 
+                <li>
+                    <input type="number">
+                </li>
+                 <li>
+                    <input type="number">
+                </li> 
+                <li>
+                    <input type="number">
+                </li> 
+                <li>
+                    <input type="number">
+                </li>
+                 
+            </ul>
+            <ul class="score-col">
+                <li>
+                    <input type="number" class="row1">
+                </li>
+                <li>
+                    <input type="number" class="row2">
+                </li> 
+                <li>
+                    <input type="number" class="row3">
+                </li>
+                 <li>
+                    <input type="number" class="row4">
+                </li> 
+                <li>
+                    <input type="number" class="row5">
+                </li> 
+                <li>
+                    <input type="number" class="row6">
+                </li>
+                
+            </ul>
+            </div>
+          
+        </div>
+        <!--column end-->
+         <!--column start-->
+         <div class="score-col-box">
+            <span class="col-number">8</span>
+            <div class="box-col">
+                  <ul class="guss-col">
+                <li>
+                    <input type="number">
+                </li>
+                <li>
+                    <input type="number">
+                </li> 
+                <li>
+                    <input type="number">
+                </li>
+                 <li>
+                    <input type="number">
+                </li> 
+                <li>
+                    <input type="number">
+                </li> 
+                <li>
+                    <input type="number">
+                </li>
+                 
+            </ul>
+            <ul class="score-col">
+                <li>
+                    <input type="number" class="row1">
+                </li>
+                <li>
+                    <input type="number" class="row2">
+                </li> 
+                <li>
+                    <input type="number" class="row3">
+                </li>
+                 <li>
+                    <input type="number" class="row4">
+                </li> 
+                <li>
+                    <input type="number" class="row5">
+                </li> 
+                <li>
+                    <input type="number" class="row6">
+                </li>
+                
+            </ul>
+            </div>
+          
+        </div>
+        <!--column end-->
+         <!--column start-->
+         <div class="score-col-box">
+            <span class="col-number">9</span>
+            <div class="box-col">
+                  <ul class="guss-col">
+                <li>
+                    <input type="number">
+                </li>
+                <li>
+                    <input type="number">
+                </li> 
+                <li>
+                    <input type="number">
+                </li>
+                 <li>
+                    <input type="number">
+                </li> 
+                <li>
+                    <input type="number">
+                </li> 
+                <li>
+                    <input type="number">
+                </li>
+                 
+            </ul>
+            <ul class="score-col">
+                <li>
+                    <input type="number" class="row1">
+                </li>
+                <li>
+                    <input type="number" class="row2">
+                </li> 
+                <li>
+                    <input type="number" class="row3">
+                </li>
+                 <li>
+                    <input type="number" class="row4">
+                </li> 
+                <li>
+                    <input type="number" class="row5">
+                </li> 
+                <li>
+                    <input type="number" class="row6">
+                </li>
+                
+            </ul>
+            </div>
+          
+        </div>
+        <!--column end-->
+         <!--column start-->
+         <div class="score-col-box">
+            <span class="col-number">10</span>
+            <div class="box-col">
+                  <ul class="guss-col">
+                <li>
+                    <input type="number">
+                </li>
+                <li>
+                    <input type="number">
+                </li> 
+                <li>
+                    <input type="number">
+                </li>
+                 <li>
+                    <input type="number">
+                </li> 
+                <li>
+                    <input type="number">
+                </li> 
+                <li>
+                    <input type="number">
+                </li>
+                 
+            </ul>
+            <ul class="score-col">
+                <li>
+                    <input type="number" class="row1">
+                </li>
+                <li>
+                    <input type="number" class="row2">
+                </li> 
+                <li>
+                    <input type="number" class="row3">
+                </li>
+                 <li>
+                    <input type="number" class="row4">
+                </li> 
+                <li>
+                    <input type="number" class="row5">
+                </li> 
+                <li>
+                    <input type="number" class="row6">
+                </li>
+                
+            </ul>
+            </div>
+          
+        </div>
+        <!--column end-->
+
+        
+    </div>
+    </div>
+    <!--score end-->
+
+     <!--next and perv btn start-->
+     <div class="scroll-btn">
+        <span class="perv-btn" onclick="pervBtn()">
+            <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor" class="bi bi-caret-left-fill" viewBox="0 0 16 16">
+                <path d="m3.86 8.753 5.482 4.796c.646.566 1.658.106 1.658-.753V3.204a1 1 0 0 0-1.659-.753l-5.48 4.796a1 1 0 0 0 0 1.506z"/>
+              </svg>
+        </span>
+    </div>
+    <!--next and perv btn end-->
+    </div>
+    <!--main container end-->
+  
+
+
+     <!--results box main container start-->
+     <div class="main-container results-big-box">
+      
+         <!--final names start-->
+      <div style="display: flex; flex-direction:column;justify-content: center;align-items: center;margin-left: 50px;">
+         <div class="names" style="margin:0px !important  ;">
+             <ul>
+                 <span style="border:none !important ; display: flex;justify-content: center;">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-person-fill" viewBox="0 0 16 16">
+                        <path d="M3 14s-1 0-1-1 1-4 6-4 6 3 6 4-1 1-1 1H3zm5-6a3 3 0 1 0 0-6 3 3 0 0 0 0 6z"/>
+                      </svg>
+                </span>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+             </ul>
+            </div>
+             <!--btn start-->
+ <div class="btn-box">
+    <span class="btn-back"><svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor" class="bi bi-caret-left-square-fill" viewBox="0 0 16 16">
+        <path d="M0 2a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V2zm10.5 10V4a.5.5 0 0 0-.832-.374l-4.5 4a.5.5 0 0 0 0 .748l4.5 4A.5.5 0 0 0 10.5 12z"/>
+      </svg></span>
+ </div>
+ <!--btn end-->
+         </div>
+            <!--final names end-->
+      <!-- results column start-->
+      <div style="display: flex; flex-direction:column;justify-content: center;align-items: center;">
+      <div class="results-col-box">
+         <span class="col-number" style="padding-top:5px ;">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-trophy-fill" viewBox="0 0 16 16">
+                <path d="M2.5.5A.5.5 0 0 1 3 0h10a.5.5 0 0 1 .5.5c0 .538-.012 1.05-.034 1.536a3 3 0 1 1-1.133 5.89c-.79 1.865-1.878 2.777-2.833 3.011v2.173l1.425.356c.194.048.377.135.537.255L13.3 15.1a.5.5 0 0 1-.3.9H3a.5.5 0 0 1-.3-.9l1.838-1.379c.16-.12.343-.207.537-.255L6.5 13.11v-2.173c-.955-.234-2.043-1.146-2.833-3.012a3 3 0 1 1-1.132-5.89A33.076 33.076 0 0 1 2.5.5zm.099 2.54a2 2 0 0 0 .72 3.935c-.333-1.05-.588-2.346-.72-3.935zm10.083 3.935a2 2 0 0 0 .72-3.935c-.133 1.59-.388 2.885-.72 3.935z"/>
+              </svg>
+         </span>
+         <div class="box-col">
+               <ul class="number-col">
+             <li>1</li>
+             <li>2</li>
+             <li>3</li>
+             <li>4</li>
+             <li>5</li>
+             <li>6</li>    
+         </ul>
+         <ul class="scores-col">
+             <li></li>
+             <li></li>
+             <li></li>
+             <li></li> 
+             <li></li>
+             <li></li> 
+         </ul>
+         </div>
+        
+     </div>
+      <div class="btn-box">
+             <div class="try-again">
+                 <span>بازی جدید</span>
+             </div>
+         </div>
+     </div>
+     <!-- results column end-->
+ <!--results box main container end-->
+</div>
+
+<script >
+const scoreColBox=document.querySelectorAll('.score-col-box');
+const sumBtn=document.querySelector('.sum-btn');
+const btnPlus =document.querySelector('.btn-plus');
+const btnBack =document.querySelector('.btn-back');
+const warningBox=document.querySelector('.warning-box');
+const scoresBigBox=document.querySelector('.scores-big-box');
+const resultsBigBox=document.querySelector('.results-big-box');
+const tryAgain=document.querySelector('.try-again');
+
+
+
+
+if(window.screen.width>600){
+/* we use this method when mouse hover in the score box column*/
+scoreColBox.forEach(item =>{
+ item.addEventListener('mouseover',()=>{
+   item.classList.add('box-active');
+ });
+})
+
+/* we use this method when mouse hover out the score box column*/
+scoreColBox.forEach(item =>{
+    item.addEventListener('mouseout',()=>{
+   item.classList.remove('box-active');
+    })
+   })
+
+}
+   /* sumation */
+  
+
+   const scoreSum=()=>{
+    let row1=document.querySelector('.score-container').querySelectorAll('.row1');
+    let row2=document.querySelector('.score-container').querySelectorAll('.row2');
+    let row3=document.querySelector('.score-container').querySelectorAll('.row3');
+    let row4=document.querySelector('.score-container').querySelectorAll('.row4');
+    let row5=document.querySelector('.score-container').querySelectorAll('.row5');
+    let row6=document.querySelector('.score-container').querySelectorAll('.row6');
+    const scoreRows=[];
+    row1= scoreCalc(row1);
+    row2= scoreCalc(row2);
+    row3= scoreCalc(row3);
+    row4= scoreCalc(row4);
+    row5= scoreCalc(row5);
+    row6= scoreCalc(row6);
+
+    scoreRows.push(row1);
+    scoreRows.push(row2);
+    scoreRows.push(row3);
+    scoreRows.push(row4);
+    scoreRows.push(row5);
+    scoreRows.push(row6);
+
+    /* taking name values*/
+    const namevalue=[];
+    const names=document.querySelector('.names').querySelectorAll('input');
+    names.forEach(item=>{
+        namevalue.push(item.value);
+    });
+     const finalScore=[
+        {name:namevalue[0],score:scoreRows[0]},
+        {name:namevalue[1],score:scoreRows[1]},
+        {name:namevalue[2],score:scoreRows[2]},
+        {name:namevalue[3],score:scoreRows[3]},
+        {name:namevalue[4],score:scoreRows[4]},
+        {name:namevalue[5],score:scoreRows[5]},
+
+    ]
+    /*sorting final scores*/
+    finalScore.sort(function(a,b){return b.score-a.score});
+
+    /* here i toke results li */
+    const results=document.querySelector('.results-col-box').querySelector('.scores-col').querySelectorAll('li');
+
+    results.forEach((item,index)=>{
+        item.innerHTML=finalScore[index].score;
+    });
+
+     /* here i toke results li */
+     const winnersNam=document.querySelector('.results-big-box').querySelector('.names').querySelectorAll('li');
+
+     winnersNam.forEach((item,index)=>{
+        if(finalScore[index].name===''){
+            item.innerHTML='?';
+        }else{
+            item.innerHTML=finalScore[index].name;
+        }
+        
+        
+        });
+     }
+    
+
+
+   
+   const scoreCalc=(arr)=>{
+    let s=0;
+            arr.forEach(item=>{
+                if(item.value!=""){
+                    s+=parseInt(item.value);
+                }
+        })
+        scoresBigBox.classList.remove('active-big-box');
+        resultsBigBox.classList.add('active-big-box');
+        return s;
+        
+   }
+
+   btnPlus.addEventListener('click',scoreSum);
+   btnBack.addEventListener('click',()=>{
+    resultsBigBox.classList.remove('active-big-box');
+    scoresBigBox.classList.add('active-big-box');
+   });
+   tryAgain.addEventListener('click',()=>{
+   const myInput= scoresBigBox.querySelectorAll('input');
+   myInput.forEach(item=>{
+    item.value='';
+   });
+   resultsBigBox.classList.remove('active-big-box');
+   scoresBigBox.classList.add('active-big-box');
+   });
+
+   /*perv and next btn functions*/
+   const scrollBox=document.querySelector('.scroll-box');
+  const size =scoreColBox[0].clientWidth;
+   let counter=0;
+   let scrollPos=[0,-36,-70,-105,-139,-172,-206,-240,-274,-307];
+   function pervBtn(){
+    if(counter<=0) {
+        counter=0;
+        return;
+    }else{
+        scoreColBox[counter].classList.remove('box-active');
+        counter--;   
+        scoreColBox[counter].classList.add('box-active');
+        scrollBox.style.transform=`translateX(${scrollPos[counter]}px)`;
+    }
+    }
+
+    function nextBtn(){
+        if(counter>=9){
+            counter=9;
+            return;
+        }else{
+            scoreColBox[counter].classList.remove('box-active');
+            counter++;   
+            scoreColBox[counter].classList.add('box-active');
+            scrollBox.style.transform=`translateX(${scrollPos[counter]}px)`;
+        }
+    
+    }
+
+</script>
