@@ -1,8 +1,17 @@
 <style>
     .container {
-  max-width: 500px;
+  max-width: 800px;
   margin: 0px auto 0px auto;
   /* Firefox */
+}
+.container .names-container {
+  width: 25%;
+}
+.container .scroll-btn {
+  width: 5%;
+}
+.container .score-container {
+  width: 70%;
 }
 .container input::-webkit-outer-spin-button,
 .container input::-webkit-inner-spin-button {
@@ -37,6 +46,8 @@
 }
 .container .main-container .names {
   margin-left: 50px;
+  background-color: white;
+  opacity: 0.7;
 }
 .container .main-container .names ul {
   width: 50px;
@@ -59,6 +70,8 @@
   border: none;
   outline: none;
   text-align: center;
+  padding: 0px !important;
+  background-color: none;
 }
 .container .main-container .results-col-box {
   direction: ltr;
@@ -203,8 +216,17 @@
 }
 
 @media only screen and (max-width: 600px) {
+  .container .names-container {
+    width: 25%;
+  }
+  .container .scroll-btn {
+    width: 10%;
+  }
+  .container .score-container {
+    width: 35%;
+  }
+
   .score-container {
-    max-width: 88px !important;
     overflow: hidden;
     padding: 30px;
     display: flex;
@@ -868,8 +890,8 @@
  <!--results box main container end-->
 </div>
 
-<script >
-const scoreColBox=document.querySelectorAll('.score-col-box');
+<script>
+    const scoreColBox=document.querySelectorAll('.score-col-box');
 const sumBtn=document.querySelector('.sum-btn');
 const btnPlus =document.querySelector('.btn-plus');
 const btnBack =document.querySelector('.btn-back');
@@ -995,7 +1017,7 @@ scoreColBox.forEach(item =>{
    const scrollBox=document.querySelector('.scroll-box');
   const size =scoreColBox[0].clientWidth;
    let counter=0;
-   let scrollPos=[0,-36,-70,-105,-139,-172,-206,-240,-274,-307];
+   let scrollPos=[0,-10,-17,-25,-35,-45,-55,-65,-75,-85];
    function pervBtn(){
     if(counter<=0) {
         counter=0;
@@ -1004,7 +1026,7 @@ scoreColBox.forEach(item =>{
         scoreColBox[counter].classList.remove('box-active');
         counter--;   
         scoreColBox[counter].classList.add('box-active');
-        scrollBox.style.transform=`translateX(${scrollPos[counter]}px)`;
+        scrollBox.style.transform=`translateX(${scrollPos[counter]}%)`;
     }
     }
 
@@ -1016,7 +1038,7 @@ scoreColBox.forEach(item =>{
             scoreColBox[counter].classList.remove('box-active');
             counter++;   
             scoreColBox[counter].classList.add('box-active');
-            scrollBox.style.transform=`translateX(${scrollPos[counter]}px)`;
+            scrollBox.style.transform=`translateX(${scrollPos[counter]}%)`;
         }
     
     }
