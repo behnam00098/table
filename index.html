@@ -4,15 +4,6 @@
   margin: 0px auto 0px auto;
   /* Firefox */
 }
-.container .names-container {
-  width: 25%;
-}
-.container .scroll-btn {
-  width: 5%;
-}
-.container .score-container {
-  width: 70%;
-}
 .container input::-webkit-outer-spin-button,
 .container input::-webkit-inner-spin-button {
   -webkit-appearance: none;
@@ -20,17 +11,6 @@
 }
 .container input[type=number] {
   -moz-appearance: textfield;
-}
-.container .warning-box {
-  width: 85%;
-  display: none;
-  margin: 0px auto 0px auto;
-  background-color: #f8d7da;
-  color: #721c24;
-  border: 1px solid #f5c6cb;
-  border-radius: 8px;
-  padding: 10px;
-  text-align: right;
 }
 .container .main-container {
   direction: rtl;
@@ -48,11 +28,19 @@
   margin-left: 50px;
   background-color: white;
   opacity: 0.7;
+  border-radius: 4px;
+}
+.container .main-container .names .name-header {
+  border-bottom: 1px solid black;
+  border-top: none;
+  display: flex;
+  justify-content: center;
+  background-color: rgb(238, 238, 238);
 }
 .container .main-container .names ul {
   width: 50px;
-  border: 2px solid black;
-  border-radius: 8px;
+  border: 1px solid black;
+  border-radius: 4px;
   padding: 0px;
   margin: 0px !important;
   overflow: hidden;
@@ -77,8 +65,8 @@
   direction: ltr;
   width: 100px;
   background: white;
-  border: 2px solid black;
-  border-radius: 8px;
+  border: 1px solid black;
+  border-radius: 4px;
   padding: 0px;
   overflow: hidden;
   display: flex;
@@ -87,6 +75,11 @@
 .container .main-container .results-col-box .col-number {
   display: block;
   text-align: center;
+  border-bottom: 1px solid black;
+  background-color: rgb(238, 238, 238);
+}
+.container .main-container .results-col-box .number-col {
+  border-right: 1px solid black;
 }
 .container .main-container .results-col-box .box-col {
   display: flex;
@@ -103,6 +96,9 @@
   list-style: none;
   text-align: center;
   border: 1px solid black;
+  border-bottom: none;
+  border-left: none;
+  border-right: none;
   padding: 2px;
 }
 .container .main-container .score-container {
@@ -118,8 +114,8 @@
   width: 30px;
   background: white;
   opacity: 0.5;
-  border: 2px solid black;
-  border-radius: 8px;
+  border: 1px solid black;
+  border-radius: 4px;
   padding: 0px;
   overflow: hidden;
   display: flex;
@@ -129,6 +125,8 @@
 .container .main-container .score-container .score-col-box .col-number {
   display: block;
   text-align: center;
+  border-bottom: 1px solid black;
+  background-color: rgb(238, 238, 238);
 }
 .container .main-container .score-container .score-col-box .box-col {
   display: flex;
@@ -157,12 +155,17 @@
 }
 .container .main-container .score-container .score-col-box .box-col .guss-col li {
   border: 1px solid black;
+  border-left: none;
+  border-bottom: none;
 }
 .container .main-container .score-container .score-col-box .box-col .score-col {
   width: 50px;
 }
 .container .main-container .score-container .score-col-box .box-col .score-col li {
   border: 1px solid black;
+  border-right: none;
+  border-bottom: none;
+  border-left: none;
 }
 .container .main-container .box-active {
   width: 80px !important;
@@ -170,6 +173,10 @@
   position: relative;
   transform: scale(1.1);
   z-index: 22;
+  margin: 0px;
+}
+.container .main-container .box-active input {
+  opacity: 1 !important;
 }
 .container .btn-box {
   display: flex;
@@ -202,6 +209,11 @@
   font-size: 16px;
   cursor: pointer;
 }
+.container .scroll-btn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
 .container .scroll-btn span {
   cursor: pointer;
 }
@@ -225,19 +237,59 @@
   .container .score-container {
     width: 35%;
   }
+  .container .score-col-box {
+    margin: 0px 3px;
+  }
+  .container .score-col-box {
+    width: 30px;
+    background: white;
+    opacity: 0.5;
+    border: 1px solid black;
+    border-radius: 4px;
+    padding: 0px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    transition: ease all 0.3s;
+  }
+  .container .score-col-box .col-number {
+    display: block;
+    text-align: center;
+    border-bottom: 1px solid black;
+    background-color: rgb(238, 238, 238);
+  }
+  .container .score-col-box .box-col ul li input {
+    max-width: 100%;
+    border: none !important;
+    outline: none !important;
+    text-align: center !important;
+    overflow: hidden;
+    padding: 0px;
+    opacity: 0;
+  }
 
   .score-container {
     overflow: hidden;
-    padding: 30px;
+    padding: 10px !important;
     display: flex;
     justify-content: flex-start !important;
   }
   .score-container .scroll-box {
-    transform: translateX(0px);
+    transform: translateX(7%);
     transition: ease all 0.5s;
   }
 }
 @media only screen and (min-width: 601px) {
+  .container .names-container {
+    width: 40%;
+  }
+  .container .scroll-btn {
+    width: 0%;
+  }
+  .container .score-container {
+    width: 60%;
+  }
+
   .container .scroll-btn {
     display: none;
   }
@@ -249,10 +301,10 @@
     <!--main container start-->
     <div class="main-container scores-big-box active-big-box" >
            <!--names start-->
-           <div style="display: flex; flex-direction:column;justify-content: center;align-items: center;margin-left: 50px; position:relative;top: 15px;">
+           <div class="names-container" style="display: flex; flex-direction:column;justify-content: center;align-items: center;margin-left: 50px; position:relative;top: 15px;">
             <div class="names" style="margin:0px !important  ;">
                 <ul>
-                    <li style="border:none !important ;">
+                    <li class="name-header">
                         <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-person-fill" viewBox="0 0 16 16">
                             <path d="M3 14s-1 0-1-1 1-4 6-4 6 3 6 4-1 1-1 1H3zm5-6a3 3 0 1 0 0-6 3 3 0 0 0 0 6z"/>
                           </svg>
@@ -820,8 +872,6 @@
     <!--next and perv btn end-->
     </div>
     <!--main container end-->
-  
-
 
      <!--results box main container start-->
      <div class="main-container results-big-box">
@@ -830,7 +880,7 @@
       <div style="display: flex; flex-direction:column;justify-content: center;align-items: center;margin-left: 50px;">
          <div class="names" style="margin:0px !important  ;">
              <ul>
-                 <span style="border:none !important ; display: flex;justify-content: center;">
+                 <span class="name-header" style="">
                     <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-person-fill" viewBox="0 0 16 16">
                         <path d="M3 14s-1 0-1-1 1-4 6-4 6 3 6 4-1 1-1 1H3zm5-6a3 3 0 1 0 0-6 3 3 0 0 0 0 6z"/>
                       </svg>
@@ -888,7 +938,12 @@
      </div>
      <!-- results column end-->
  <!--results box main container end-->
+
+  
+
+ 
 </div>
+
 
 <script>
     const scoreColBox=document.querySelectorAll('.score-col-box');
@@ -1015,9 +1070,13 @@ scoreColBox.forEach(item =>{
 
    /*perv and next btn functions*/
    const scrollBox=document.querySelector('.scroll-box');
-  const size =scoreColBox[0].clientWidth;
-   let counter=0;
-   let scrollPos=[0,-10,-17,-25,-35,-45,-55,-65,-75,-85];
+  const size =scoreColBox[2].clientWidth;
+  const scoreContainer=document.querySelector('.score-container');
+  scoreContainer.style.width=`${size*6}px`
+  
+  let counter=0;
+  let scrollPos=[7,-3,-11,-20,-29,-38,-47,-56,-65,-74];
+
    function pervBtn(){
     if(counter<=0) {
         counter=0;
